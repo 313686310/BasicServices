@@ -49,4 +49,20 @@ volumes:
   ```
   再次启动,运行成功！！！
 
+## 检测本地.NET程序
+1.sonar生成token
+
+  ![image](https://user-images.githubusercontent.com/13936681/236361558-c79c4435-f686-44d6-8286-96995bd6be4e.png)
+  
+2.安装扫描工具
+  ```
+  $ dotnet tool install --global dotnet-sonarscanner
+  ```
+3.执行扫描脚本
+  ```
+  $ dotnet sonarscanner begin /k:"project-key" /d:sonar.host.url=http://xxx.xxx.xxx.xxx:9000  /d:sonar.login="<token>"
+  $ dotnet build <path to solution.sln>
+  $ dotnet sonarscanner end /d:sonar.login="<token>"
+  ```
+  ## 查看效果
 
